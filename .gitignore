@@ -1,0 +1,40 @@
+# Ignore .vscode directory
+.vscode/
+
+# C++ build files
+*.o
+*.out
+*.a
+*.so
+*.exe
+*.dll
+
+# C++ object files
+*.obj
+
+# C++ core dumps
+core.*
+
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+
+# Python virtual environments
+venv/
+ENV/
+env/
+*.egg-info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Log files
+*.log
+
+# IDE configuration files
+.idea/
+*.swp
+
+# Temporary files
+*~
