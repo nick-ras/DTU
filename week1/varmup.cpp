@@ -19,7 +19,7 @@ return f({1, 3, 5, 7, 9}, 1) + 7 + 6 + 5 + 4
 return 7 + 6 + 5 + 4 + 3 + 2 + 1
 
 2.2
-*/
+*/     
 
 int f(std::array<int, 5>& A, int n) {
     if (n == 0) {
