@@ -3,26 +3,41 @@
 #include <unistd.h>
 
 int main(){
-
-    int sub_arr_len = 3; //choose the length of the subarray
-    std::vector<int> A = {31, 41, -4, 59, 26, -10, 41, 58, -1};
+    std::vector<int> A = {31, -40, -4, 59, 26, -10, 41, 58, -1};
     int length = A.size();
-    printf("size of arr is %d", length);
+    printf("size of arr is %d\n", length);
     int sum = 0;
-    int sum_start_index;
-    for (int i = 0; i <= length - sub_arr_len; i++){
-        int sum_temp = 0;
-        for (int j = i; j < i + sub_arr_len; j++){
-            sum_temp += A[j];
-            printf("%d added in inner loop\n", A[j]);
+    int start = 0;
+    int end = 0;;
+    for (int i = 0; i < length; i++){
+        int tmp[length] = {0};
+        for (int j = i; j < length; j++){
+            if (j == i){
+                tmp[j] = A[j];
+            }
+            else if (j > i){
+                tmp[j] = tmp[j - 1] + A[j];
+            }
+            else{
+                printf("ERROR in loop i: %d j: %d\n", i, j);
+                exit(1);
+            }
         }
-        if (sum_temp > sum){
-            sum = sum_temp;
-            printf("new sum is %d\n", sum);
-            sum_start_index = i;
+        printf("numbers in subarray: "); // DEBBUGGING
+        for (int y = i; y < length; y++){
+            printf("%d ", tmp[y]);
         }
-    };
-    printf("Done \n and numbers are %d %d %d ", A[sum_start_index], A[sum_start_index + 1], A[sum_start_index + 2]);
+        printf("\n\n");
+        for (int g = i; g < length; g++){ //COMP WITH EXISTING MAX SUM
+            if (tmp[g] > sum){
+                sum = tmp[g];
+                start = i;
+                end = g;
+                printf("New max sum: %d\n start is: %d\n end is %d\n", sum, start, end);
+            }
+        }
 
+    }
+    printf("Max sum is: %d and start and end indices are: %d and %d\n", sum, start, end);
     return 0;
 }
