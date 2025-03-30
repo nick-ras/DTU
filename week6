@@ -1,0 +1,24 @@
+Qeues
+1. priority queye
+Extraction
+- Når du tager et element ud, så tager yderste højre element, og skift med den du tager ud, og så bubble down først, og så bubble op
+
+
+Quick union
+- vigtigt at en root i den ene i union bliver bliver chidl of the root the other tree
+
+init(7) means an array of 7 that is 7 sets of 1 elements
+0, 1
+2-3
+0,1,5
+2,3,0,1,5
+2,3,0,1,5,4
+2,3,0,1,5,4,6
+final. 2,3,0,1,5,4,6
+
+Woieghted quick union
+du ser hvike der har mindst elemenster i sig og attacher til root på den største af de to sets. selvom root har 3 children, så får den 4 med den nye union
+Dybden: Dybden er max logn * n
+
+Path compression
+- At tage alle dem du traverser igennem i find operation og sætter direkte under root
